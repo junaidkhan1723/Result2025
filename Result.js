@@ -1,6 +1,66 @@
 var http = require("http");
 var url = require("url");
 
+var css = {`<style>
+	body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+      .table {
+        max-width: 600px;
+        margin: auto;
+		    margin-top:50px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 4px 10px rgba(15, 14, 14, 0.1);
+      }
+		.name{
+		display:flex;
+		justify-content:space-between;
+		}
+      h2 {
+        color: green;
+        font-size: 24px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color:rgb(223, 233, 232);
+      }
+      tr:nth-child(even) {
+        background-color:rgb(162, 193, 232);
+      }
+	tr:nth-child(odd) {
+        background-color:rgb(210, 216, 216);
+      }
+      .pass {
+        color: green;
+        font-weight: bold;
+      }
+      .fail {
+        color: red;
+        font-weight: bold;
+      }
+      p {
+        font-size: 16px;
+		font-weight:bold;
+      }
+   
+	</style>`}
+
 const data = [
   {
     rollno: 100,
@@ -123,65 +183,7 @@ http
 
       res.write(`<html>
 		<head>
-		<style>
-	body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 20px;
-        text-align: center;
-      }
-      .table {
-        max-width: 600px;
-        margin: auto;
-		    margin-top:50px;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 2px 4px 10px rgba(15, 14, 14, 0.1);
-      }
-		.name{
-		display:flex;
-		justify-content:space-between;
-		}
-      h2 {
-        color: green;
-        font-size: 24px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-      }
-      th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-      }
-      th {
-        background-color:rgb(223, 233, 232);
-      }
-      tr:nth-child(even) {
-        background-color:rgb(162, 193, 232);
-      }
-	tr:nth-child(odd) {
-        background-color:rgb(210, 216, 216);
-      }
-      .pass {
-        color: green;
-        font-weight: bold;
-      }
-      .fail {
-        color: red;
-        font-weight: bold;
-      }
-      p {
-        font-size: 16px;
-		font-weight:bold;
-      }
-   
-	</style>
+		{css}
 		</head>
 		<body>
 		
